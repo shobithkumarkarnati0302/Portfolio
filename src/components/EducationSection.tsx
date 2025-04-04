@@ -55,28 +55,28 @@ const EducationSection = () => {
       title: "The Full stack Web Development Bootcamp",
       issuer: "Udemy",
       date: "02/2024 – 05/2024",
-      link: "#"
+      link: "src/static/UDEMY FULL STACK.pdf"
     },
     {
       id: 2,
       title: "Computer Networks and Internet Protocol",
       issuer: "NPTEL",
       date: "01/2024 – 04/2024",
-      link: "#"
+      link: "src/static/CN NPTEL CERTIFICATE.pdf"
     },
     {
       id: 3,
       title: "Database & SQL",
       issuer: "Infosys SpringBoard",
       date: "05/10/2023",
-      link: "#"
+      link: "src/static/INFOSYS DBMS CERTITFICATE.pdf"
     },
     {
       id: 4,
       title: "Artificial Intelligence with Python",
       issuer: "Coincent",
       date: "11/2022 – 01/2023",
-      link: "#"
+      link: "src/static/SHOBITH-PYTHON CERTIFICATE.pdf"
     }
   ];
 

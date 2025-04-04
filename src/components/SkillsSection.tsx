@@ -9,7 +9,7 @@ type Skill = {
   name: string;
   proficiency: number;
   category: SkillCategory[];
-  icon?: string;
+  icon: string; // Changed from optional to required
 };
 
 const SkillsSection = () => {
@@ -18,16 +18,16 @@ const SkillsSection = () => {
   const [progressValues, setProgressValues] = useState<Record<string, number>>({});
   
   const skills: Skill[] = [
-    { name: 'JavaScript', proficiency: 85, category: ['frontend', 'languages'] },
-    { name: 'React.js', proficiency: 75, category: ['frontend'] },
-    { name: 'HTML', proficiency: 90, category: ['frontend'] },
-    { name: 'CSS', proficiency: 85, category: ['frontend'] },
-    { name: 'Tailwind CSS', proficiency: 70, category: ['frontend'] },
-    { name: 'Bootstrap', proficiency: 85, category: ['frontend'] },
-    { name: 'Node.js', proficiency: 60, category: ['backend'] },
-    { name: 'MongoDB', proficiency: 80, category: ['backend'] },
-    { name: 'Python', proficiency: 85, category: ['languages'] },
-    { name: 'C', proficiency: 90, category: ['languages'] },
+    { name: 'C', proficiency: 80, category: ['languages'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
+    { name: 'Python', proficiency: 90, category: ['languages'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+    { name: 'HTML', proficiency: 90, category: ['frontend'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+    { name: 'CSS', proficiency: 85, category: ['frontend'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+    { name: 'JavaScript', proficiency: 75, category: ['frontend', 'languages'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+    { name: 'Tailwind CSS', proficiency: 75, category: ['frontend'], icon: 'src/static/tailwind-css.svg' },
+    { name: 'Bootstrap', proficiency: 85, category: ['frontend'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
+    { name: 'React.js', proficiency: 65, category: ['frontend'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'Node.js', proficiency: 60, category: ['backend'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    { name: 'MongoDB', proficiency: 75, category: ['backend'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
   ];
 
   useEffect(() => {
@@ -99,9 +99,16 @@ const SkillsSection = () => {
               key={skill.name}
               className="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-5px]"
             >
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white">{skill.name}</h3>
-                <span className="text-sm text-gray-500 dark:text-gray-400">{progressValues[skill.name]}%</span>
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex flex-col">
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-white">{skill.name}</h3>
+                  <span className="text-sm text-gray-500 dark:text-gray-400">{progressValues[skill.name]}%</span>
+                </div>
+                <img 
+                  src={skill.icon} 
+                  alt={`${skill.name} logo`}
+                  className="w-10 h-10 object-contain"
+                />
               </div>
               <Progress 
                 value={progressValues[skill.name]} 

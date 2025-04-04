@@ -76,7 +76,7 @@ const Navbar = () => {
           </ul>
           <div className="flex items-center gap-4">
             <a 
-              href="https://github.com/" 
+              href="https://github.com/shobithkumarkarnati0302" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-gray-600 hover:text-portfolio-primary transition-all duration-300 transform hover:scale-110"
@@ -85,7 +85,7 @@ const Navbar = () => {
               <Github className="w-5 h-5" />
             </a>
             <a 
-              href="https://linkedin.com/" 
+              href="https://www.linkedin.com/in/shobithkarnati0302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-gray-600 hover:text-portfolio-primary transition-all duration-300 transform hover:scale-110"

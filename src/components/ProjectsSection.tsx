@@ -35,8 +35,8 @@ const ProjectsSection = () => {
         "Responsive UI",
         "Dark Mode Support"
       ],
-      githubLink: "https://github.com/",
-      liveLink: "https://expense-tracker.com/",
+      githubLink: "https://github.com/shobithkumarkarnati0302/SpendSmart",
+      liveLink: "https://spendsmart-shobith.vercel.app/",
     },
     {
       id: 2,
@@ -64,8 +64,8 @@ const ProjectsSection = () => {
         "Track management",
         "User interface similar to Spotify"
       ],
-      githubLink: "https://github.com/",
-      liveLink: "https://spotify-clone.com/",
+      githubLink: "https://github.com/shobithkumarkarnati0302/Spotify-Clone",
+      liveLink: "https://spotify-clone-shobith.netlify.app/",
     }
   ];
 
