@@ -4,7 +4,8 @@ import { cn } from "@/lib/utils";
 
 const handleDownload = () => {
   const link = document.createElement("a");
-  link.href = "src/static/Karnat Shobith Kumar-Resume.pdf"; // 
+  link.href = "https://drive.google.com/file/d/1q6hSgyGdYAMJISPpUTABMYC2n4Zxfkx1/view?usp=drive_link";
+  link.target = "_blank";
   link.download = "resume.pdf";
   document.body.appendChild(link);
   link.click();
