@@ -105,7 +105,7 @@ const HeroSection = () => {
             {/* Increased image size for desktop/laptop screens */}
             <div className="w-72 h-72 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden border-4 border-portfolio-primary shadow-xl">
               <img
-                src="https://i.imghippo.com/files/Mgj5367Zgg.jpg"
+                src="/1.jpg"
                 alt="Shobith Kumar"
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
               />
