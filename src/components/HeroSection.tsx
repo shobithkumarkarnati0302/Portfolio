@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 const handleDownload = () => {
   const link = document.createElement("a");
-  link.href = "https://drive.google.com/file/d/1q6hSgyGdYAMJISPpUTABMYC2n4Zxfkx1/view?usp=drive_link";
+  link.href = "public/Resume.pdf";
   link.target = "_blank";
   link.download = "resume.pdf";
   document.body.appendChild(link);
