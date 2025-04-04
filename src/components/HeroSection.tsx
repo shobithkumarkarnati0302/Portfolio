@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 const handleDownload = () => {
   const link = document.createElement("a");
-  link.href = "public/Resume.pdf";
+  link.href = "https://drive.google.com/file/d/1q6hSgyGdYAMJISPpUTABMYC2n4Zxfkx1/view?usp=drive_link";
   link.target = "_blank";
   link.download = "resume.pdf";
   document.body.appendChild(link);
@@ -68,7 +68,7 @@ const HeroSection = () => {
             <a href="https://github.com/shobithkumarkarnati0302"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-portfolio-primary transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transform hover:scale-110 transition-all duration-300"
+              className="text-gray-600 hover:text-portfolio-primary transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transform hover:scale-110 duration-300"
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
@@ -76,7 +76,7 @@ const HeroSection = () => {
             <a href="https://www.linkedin.com/in/shobithkarnati0302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-portfolio-primary transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transform hover:scale-110 transition-all duration-300"
+              className="text-gray-600 hover:text-portfolio-primary transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transform hover:scale-110 duration-300"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
@@ -84,7 +84,7 @@ const HeroSection = () => {
             <a href="https://leetcode.com/u/Shobith_Bunny_0302/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-portfolio-primary transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transform hover:scale-110 transition-all duration-300"
+              className="text-gray-600 hover:text-portfolio-primary transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transform hover:scale-110 duration-300"
               aria-label="LinkedIn"
             >
               <svg
