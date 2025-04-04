@@ -23,7 +23,7 @@ const SkillsSection = () => {
     { name: 'HTML', proficiency: 90, category: ['frontend'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
     { name: 'CSS', proficiency: 85, category: ['frontend'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
     { name: 'JavaScript', proficiency: 75, category: ['frontend', 'languages'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-    { name: 'Tailwind CSS', proficiency: 75, category: ['frontend'], icon: 'https://drive.google.com/file/d/1D7Rkp5s6DlbrWx2KHFByiJT7kFmR0-mf/view?usp=sharing' },
+    { name: 'Tailwind CSS', proficiency: 75, category: ['frontend'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
     { name: 'Bootstrap', proficiency: 85, category: ['frontend'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
     { name: 'React.js', proficiency: 65, category: ['frontend'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
     { name: 'Node.js', proficiency: 60, category: ['backend'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
