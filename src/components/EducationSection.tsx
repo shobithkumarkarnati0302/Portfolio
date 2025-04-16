@@ -1,6 +1,6 @@
-
-import { GraduationCap, Calendar, MapPin, Award } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, Award, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useState } from 'react';
 
 interface Education {
   id: number;
@@ -21,6 +21,9 @@ interface Certification {
 }
 
 const EducationSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [previewLink, setPreviewLink] = useState('');
+
   const education: Education[] = [
     {
       id: 1,
@@ -55,31 +58,51 @@ const EducationSection = () => {
       title: "The Full stack Web Development Bootcamp",
       issuer: "Udemy",
       date: "02/2024 – 05/2024",
-      link: "https://drive.google.com/uc?export=view&id=134vH1DApB1tY-wR34VWDZWOmKDRtQWSn"
+      link: "https://drive.google.com/file/d/134vH1DApB1tY-wR34VWDZWOmKDRtQWSn/view?usp=drive_link"
     },
     {
       id: 2,
       title: "Computer Networks and Internet Protocol",
       issuer: "NPTEL",
       date: "01/2024 – 04/2024",
-      link: "https://drive.google.com/uc?export=view&id=10TibH2X1dEo57v0IWA3j2kKBwGViUGlC"
+      link: "https://drive.google.com/file/d/10TibH2X1dEo57v0IWA3j2kKBwGViUGlC/view?usp=sharing"
     },
     {
       id: 3,
       title: "Database & SQL",
       issuer: "Infosys SpringBoard",
       date: "05/10/2023",
-      link: "https://drive.google.com/uc?export=view&id=1jfWU0J0Y36_n7v4tK-faJicO8-OJ7yjE"
+      link: "https://drive.google.com/file/d/1jfWU0J0Y36_n7v4tK-faJicO8-OJ7yjE/view?usp=drive_link"
     },
     {
       id: 4,
       title: "Artificial Intelligence with Python",
       issuer: "Coincent",
       date: "11/2022 – 01/2023",
-      link: "https://drive.google.com/uc?export=view&id=1sOJBOAnGMWOZQR9Pzk2YaNj64R-9J96W"
+      link: "https://drive.google.com/file/d/1sOJBOAnGMWOZQR9Pzk2YaNj64R-9J96W/view?usp=drive_link"
     }
   ];
-  
+
+  // Function to convert Google Drive view link to embed link
+  const getEmbedLink = (link: string) => {
+    const fileId = link.match(/\/d\/(.+?)\//)?.[1];
+    if (fileId) {
+      return `https://drive.google.com/file/d/${fileId}/preview`;
+    }
+    return link;
+  };
+
+  // Open modal with the certificate preview
+  const openPreview = (link: string) => {
+    setPreviewLink(getEmbedLink(link));
+    setIsModalOpen(true);
+  };
+
+  // Close modal
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setPreviewLink('');
+  };
 
   return (
     <section id="education" className="py-20 bg-gray-50 dark:bg-gray-800">
@@ -181,10 +204,8 @@ const EducationSection = () => {
                   </div>
                   
                   {cert.link && (
-                    <a 
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => openPreview(cert.link)}
                       className="text-portfolio-primary hover:text-portfolio-secondary text-sm font-medium inline-flex items-center mt-2"
                     >
                       View Certificate
@@ -203,7 +224,7 @@ const EducationSection = () => {
                           d="M1 5h12m0 0L9 1m4 4L9 9"
                         />
                       </svg>
-                    </a>
+                    </button>
                   )}
                 </div>
               ))}
@@ -211,6 +232,26 @@ const EducationSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal for Certificate Preview */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-xl max-w-4xl w-full h-[80vh] relative">
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <iframe
+              src={previewLink}
+              className="w-full h-full rounded-lg"
+              title="Certificate Preview"
+              allow="autoplay"
+            ></iframe>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
