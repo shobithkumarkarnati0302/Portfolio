@@ -4,13 +4,13 @@ import { cn } from "@/lib/utils";
 
 const handleDownload = () => {
   const link = document.createElement("a");
-  link.href = "https://drive.google.com/file/d/1q6hSgyGdYAMJISPpUTABMYC2n4Zxfkx1/view?usp=drive_link";
-  link.target = "_blank";
+  link.href = "https://drive.google.com/uc?export=download&id=1q6hSgyGdYAMJISPpUTABMYC2n4Zxfkx1";
   link.download = "resume.pdf";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 };
+
 
 const HeroSection = () => {
   return (
