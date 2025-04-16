@@ -55,30 +55,31 @@ const EducationSection = () => {
       title: "The Full stack Web Development Bootcamp",
       issuer: "Udemy",
       date: "02/2024 – 05/2024",
-      link: "https://drive.google.com/file/d/134vH1DApB1tY-wR34VWDZWOmKDRtQWSn/view?usp=drive_link"
+      link: "https://drive.google.com/uc?export=view&id=134vH1DApB1tY-wR34VWDZWOmKDRtQWSn"
     },
     {
       id: 2,
       title: "Computer Networks and Internet Protocol",
       issuer: "NPTEL",
       date: "01/2024 – 04/2024",
-      link: "https://drive.google.com/file/d/10TibH2X1dEo57v0IWA3j2kKBwGViUGlC/view?usp=sharing"
+      link: "https://drive.google.com/uc?export=view&id=10TibH2X1dEo57v0IWA3j2kKBwGViUGlC"
     },
     {
       id: 3,
       title: "Database & SQL",
       issuer: "Infosys SpringBoard",
       date: "05/10/2023",
-      link: "https://drive.google.com/file/d/1jfWU0J0Y36_n7v4tK-faJicO8-OJ7yjE/view?usp=drive_link"
+      link: "https://drive.google.com/uc?export=view&id=1jfWU0J0Y36_n7v4tK-faJicO8-OJ7yjE"
     },
     {
       id: 4,
       title: "Artificial Intelligence with Python",
       issuer: "Coincent",
       date: "11/2022 – 01/2023",
-      link: "https://drive.google.com/file/d/1sOJBOAnGMWOZQR9Pzk2YaNj64R-9J96W/view?usp=drive_link"
+      link: "https://drive.google.com/uc?export=view&id=1sOJBOAnGMWOZQR9Pzk2YaNj64R-9J96W"
     }
   ];
+  
 
   return (
     <section id="education" className="py-20 bg-gray-50 dark:bg-gray-800">
