@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Progress } from '@/components/ui/progress';
 
 type SkillCategory = 'all' | 'frontend' | 'backend' | 'languages';
 
@@ -9,14 +7,13 @@ type Skill = {
   name: string;
   proficiency: number;
   category: SkillCategory[];
-  icon: string; // Changed from optional to required
+  icon: string;
 };
 
 const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState<SkillCategory>('all');
   const [visibleSkills, setVisibleSkills] = useState<Skill[]>([]);
-  const [progressValues, setProgressValues] = useState<Record<string, number>>({});
-  
+
   const skills: Skill[] = [
     { name: 'C', proficiency: 80, category: ['languages'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
     { name: 'Python', proficiency: 90, category: ['languages'], icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
@@ -31,28 +28,10 @@ const SkillsSection = () => {
   ];
 
   useEffect(() => {
-    const filtered = skills.filter(skill => 
+    const filtered = skills.filter(skill =>
       activeCategory === 'all' || skill.category.includes(activeCategory)
     );
-    
-    const initialProgressValues: Record<string, number> = {};
-    filtered.forEach(skill => {
-      initialProgressValues[skill.name] = 0;
-    });
-    setProgressValues(initialProgressValues);
-    
     setVisibleSkills(filtered);
-    
-    const timer = setTimeout(() => {
-      const finalProgressValues: Record<string, number> = {};
-      filtered.forEach(skill => {
-        finalProgressValues[skill.name] = skill.proficiency;
-      });
-      setProgressValues(finalProgressValues);
-    }, 100);
-    
-    return () => clearTimeout(timer);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeCategory]);
 
   const categories = [
@@ -83,7 +62,7 @@ const SkillsSection = () => {
                 onClick={() => setActiveCategory(category.id as SkillCategory)}
                 className={cn(
                   "px-4 py-2 rounded-md text-sm font-medium transition-all duration-300",
-                  activeCategory === category.id 
+                  activeCategory === category.id
                     ? "bg-portfolio-primary text-white"
                     : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
                 )}
@@ -96,31 +75,17 @@ const SkillsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {visibleSkills.map(skill => (
-            <div 
+            <div
               key={skill.name}
               className="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-5px]"
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex flex-col">
-                  <h3 className="text-lg font-medium text-gray-900 dark:text-white">{skill.name}</h3>
-                  <span className="text-sm text-gray-500 dark:text-gray-400">{progressValues[skill.name]}%</span>
-                </div>
-                <img 
-                  src={skill.icon} 
+              <div className="flex items-center justify-between">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{skill.name}</h3>
+                <img
+                  src={skill.icon}
                   alt={`${skill.name} logo`}
-                  className="w-10 h-10 object-contain"
+                  className="w-14 h-14 object-contain"
                 />
-              </div>
-              <Progress 
-                value={progressValues[skill.name]} 
-                className="h-2 bg-gray-200 dark:bg-gray-700 transition-all duration-1000" 
-              />
-              <div className="mt-4 flex items-center text-sm text-gray-500 dark:text-gray-400">
-                <div className="flex items-center">
-                  <Check className="w-4 h-4 text-green-500 mr-1" />
-                  {skill.proficiency >= 85 ? 'Proficient' : 
-                   skill.proficiency >= 70 ? 'Intermediate' : 'Beginner'}
-                </div>
               </div>
             </div>
           ))}
