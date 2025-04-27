@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+// New imports
+import { CursorFollower } from "@/components/CursorFollower";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -13,6 +16,9 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      {/* Cursor follower circle */}
+      <CursorFollower />
+      {/* Main App Routing */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
