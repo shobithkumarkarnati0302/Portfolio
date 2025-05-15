@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 
 const handleDownload = () => {
   const link = document.createElement("a");
-  link.href = "/resume.pdf";
-  link.download = "resume.pdf";
+  link.href = "/Resume1.pdf";
+  link.download = "resume1.pdf";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
